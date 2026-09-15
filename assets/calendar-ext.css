@@ -1,0 +1,284 @@
+/* 日历扩展样式：悬停弹窗 + 图例 + 专门日历页（仅新增类，不动原月历排版）
+   2026-09-11 布局调整：日历在上、提醒在下；提醒改为等高卡片网格 */
+
+/* ---------- 首页排版：左块与日历等高，提醒整块铺在下方 ---------- */
+/* 覆盖原 .cover-inner{align-items:center} —— 改为拉伸，两块同高 */
+.cover-inner { align-items: stretch; }
+
+/* 右列自身也拉伸，内部竖排：日历卡吃掉剩余高度，底部说明沉底 */
+.cal-col {
+  flex: 0 0 396px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.cal-col .cal-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.cal-col .cal-cap { margin-top: auto; }
+
+/* ---------- 日历卡片框内的翻月控件（‹ 今天 ›） ---------- */
+/* .cal-chip 已有 margin-left:auto，导航紧跟其后即可 */
+.cal-nav { display: inline-flex; gap: 6px; margin-left: 10px; align-items: center; }
+.cal-nav button {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--ink-2);
+  font-size: 12px;
+  line-height: 1;
+}
+.cal-nav button:hover { border-color: var(--primary); color: var(--primary); }
+.cal-nav .cal-prev,
+.cal-nav .cal-next { font-size: 16px; padding: 0 4px; }
+.cal-nav .cal-today { font-weight: 600; }
+
+/* 悬停 / 点击 弹窗 */
+.cal-tip {
+  position: fixed;
+  z-index: 9999;
+  display: none;
+  max-width: 290px;
+  background: #fff;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(14, 155, 138, .20);
+  padding: 11px 13px;
+  font-size: 13px;
+  pointer-events: auto;
+}
+.cal-tip .tip-date {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 7px;
+  font-size: 12.5px;
+}
+.cal-tip .tip-row { display: flex; gap: 8px; align-items: flex-start; margin: 7px 0; }
+.cal-tip .tip-body { flex: 1; min-width: 0; }
+.cal-tip .tip-name { font-weight: 600; color: var(--ink); text-decoration: none; }
+.cal-tip .tip-name a { color: var(--primary); text-decoration: none; }
+.cal-tip .tip-name a:hover { text-decoration: underline; }
+.cal-tip .tip-note { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+/* 图例 */
+.cal-legend {
+  display: flex;
+  gap: 18px;
+  margin: 12px 2px 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.cal-legend .lg { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.cal-legend .lg-exam { background: var(--primary); }
+.cal-legend .lg-signup { background: var(--accent); }
+.cal-legend .lg-notice { background: var(--cyan); }
+
+/* ---------- 提醒卡片网格（首页 + 日历页共用） ---------- */
+.remind-list.grid2,
+.remind-list.grid-auto,
+.remind-list.grid-full {
+  display: grid;
+  gap: 9px;
+}
+.remind-list.grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.remind-list.grid-auto { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+/* 首页下方整块：自适应多列，横向铺满可用宽度 */
+.remind-list.grid-full {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.evt-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 11px 11px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: var(--radius);
+  min-width: 0;
+  overflow: hidden;
+}
+.evt-card.evt-exam   { border-left-color: var(--primary); }
+.evt-card.evt-signup { border-left-color: var(--accent); }
+.evt-card.evt-notice { border-left-color: var(--cyan); }
+.evt-card.seen { opacity: .45; }
+
+.evt-card .ec-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.evt-card .ec-when {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary-ink);
+  white-space: nowrap;
+}
+.evt-card .ec-x {
+  border: none;
+  background: transparent;
+  color: var(--faint);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.evt-card .ec-x:hover { color: var(--primary); }
+
+.evt-card .ec-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.35;
+  word-break: break-word;
+}
+a.ec-name:hover { color: var(--primary); text-decoration: underline; }
+.evt-card .ec-meta {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.remind-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+.remind-more:hover { text-decoration: underline; }
+
+/* 首页提醒区：独立整块，铺满封面下方全部宽度 */
+.remind-card.home-full {
+  margin: 0 0 30px;
+  padding: 16px 18px 15px;
+}
+.remind-card.home-full .remind-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.remind-card.home-full .remind-title { font-size: 15px; }
+/* "查看全部"推到标题行最右侧 */
+.remind-head .remind-more { margin: 0 0 0 auto; }
+
+/* ---------- 专门日历页：上（整月大日历）+ 下（全部提醒网格） ---------- */
+.page-cal { padding: 6px 0 24px; }
+.fc-layout { display: block; }
+.fc-main { width: 100%; }
+.fc-below { width: 100%; margin-top: 20px; }
+.fc-below .remind-head { margin-bottom: 12px; }
+
+.fc-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-s);
+  padding: 18px 20px;
+}
+.cal-days.large { gap: 6px; }
+.cal-days.large span {
+  height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 7px 9px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+.cal-days.large span.has-evt {
+  background: var(--bg);
+  box-shadow: inset 0 0 0 1.5px var(--line-strong);
+}
+.cal-days.large .evt-dot { bottom: auto; top: 9px; right: 9px; left: auto; transform: none; }
+.cal-days.large span.today { background: var(--primary-soft); box-shadow: inset 0 0 0 1.5px var(--primary); }
+
+/* 移动端：单列，右列铺满 */
+@media (max-width: 860px) {
+  .cal-col { flex: 0 0 auto; width: 100%; max-width: 440px; align-self: flex-start; }
+  .remind-list.grid-auto,
+  .remind-list.grid-full { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
+@media (max-width: 520px) {
+  .remind-list.grid2,
+  .remind-list.grid-auto,
+  .remind-list.grid-full { grid-template-columns: minmax(0, 1fr); }
+  .remind-card.home-full .remind-head { flex-wrap: wrap; }
+  .remind-head .remind-more { margin-left: 0; }
+  .cal-days.large span { height: 62px; font-size: 13.5px; padding: 5px 6px; }
+}
+
+/* ---------- 项目日志（#/p/changelog） ---------- */
+.changelog { padding-top: 2px; }
+.log-item {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 13px 16px 13px 18px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.log-item.k-new  { border-left-color: var(--primary); }
+.log-item.k-opt  { border-left-color: var(--cyan); }
+.log-item.k-data { border-left-color: var(--accent); }
+.log-item.k-site { border-left-color: var(--leaf); }
+.log-item.k-fix  { border-left-color: #C0553F; }
+
+.log-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.log-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.log-ver {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-ink);
+  background: var(--primary-soft);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.log-kind {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.log-title { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+.log-body { margin: 0; padding-left: 18px; }
+.log-body li {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin: 3px 0;
+}
+.log-body code {
+  background: #EEF3F3;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+}
+@media (max-width: 520px) {
+  .log-item { padding: 11px 12px 11px 14px; }
+  .log-head { flex-wrap: wrap; }
+}

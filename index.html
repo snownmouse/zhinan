@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F5FAFA" />
+<title>民间指南</title>
+<meta name="description" content="民间指南：中南民族大学校园生活、学业修读、毕业升学、就业职场、校园服务一站查询。" />
+<link rel="stylesheet" href="assets/styles.css?v=1789143322" />
+<link rel="stylesheet" href="assets/calendar-ext.css?v=1789143322">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="打开目录">☰</button>
+  <a class="brand" href="#/">
+    <span class="brand-mark">民</span>
+    <span class="brand-text">
+<strong><span class="q-name">民间指南</span></strong>
+    </span>
+  </a>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input id="searchInput" type="search" placeholder="搜索：转专业 / 校园网 / 保研 / 校医院 …" autocomplete="off" />
+    <button class="search-clear" id="searchClear" hidden aria-label="清空">✕</button>
+  </div>
+
+  <nav class="topbar-actions">
+    <a class="ghost-btn" href="#/p/changelog">项目日志</a>
+    <a class="ghost-btn" href="#/p/about">关于本手册</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <span class="sh-title">目录</span>
+      <button class="sh-toggle" id="collapseBtn" type="button" aria-label="收起目录" title="收起目录">‹</button>
+    </div>
+    <nav class="sidebar-inner" id="sidebarNav"><!-- 由 app.js 渲染 --></nav>
+    <div class="sidebar-foot">
+      <p>内容整理自《中南民指南（寒假修订版）》</p>
+      <p class="muted">如有错漏，欢迎补充投稿</p>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main" id="main">
+    <div class="main-inner" id="view"><!-- 由 app.js 渲染 --></div>
+    <footer class="site-foot">
+      <span class="q-name">民间指南</span>
+      <span class="muted">非官方资料，仅供参考 · 一切以学校最新文件为准</span>
+    </footer>
+  </main>
+</div>
+
+<script src="assets/data/campus.js?v=1789147208469"></script>
+<script src="assets/data/study.js?v=1789147208349"></script>
+<script src="assets/data/graduation.js?v=1789149505"></script>
+<script src="assets/data/career.js"></script>
+<script src="assets/data/service.js"></script>
+<script src="assets/data/about.js?v=1789147208567"></script>
+<script src="assets/data/competition.js?v=1789149256"></script>
+  <script src="assets/data/events.js?v=1789143322"></script>
+  <script src="assets/data/calendar-ext.js?v=1789143322"></script>
+  <script src="assets/data/changelog.js?v=1789143322"></script>
+  <script src="assets/app.js?v=1789143322"></script>
+</body>
+</html>
