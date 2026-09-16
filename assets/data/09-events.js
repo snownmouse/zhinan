@@ -23,8 +23,6 @@
  */
 window.EVENTS = [
   /* —— 官方日期已确认（2026 下半年） —— */
-  { id: 'ntce-2026-09',        title: '中小学教师资格考试（下半年）笔试', type: 'exam',   date: '2026-09-12', note: '下半年笔试；报名已于 7 月截止',        url: 'https://ntce.neea.edu.cn',   recur: '每年3月、9月各一次',     conf: true },
-  { id: 'cet-signup-2026-12',  title: '四/六级报名开始（湖北考区）',      type: 'signup', date: '2026-09-14', note: '9/14 10:00 开放，截止 9/23 17:00',   url: 'http://cet-bm.neea.edu.cn',  recur: '每年3月、9月中旬报名',   conf: true },
   { id: 'cet-signup-dl-2026',  title: '四/六级报名截止（湖北考区）',      type: 'signup', date: '2026-09-23', note: '17:00 截止；缴费截止 9/24 17:00',    url: 'http://cet-bm.neea.edu.cn',  recur: '报名约10天',             conf: true },
   { id: 'ncre-2026-09',        title: '全国计算机等级考试（NCRE）',       type: 'exam',   date: '2026-09-19', note: '下半年场次（9/19-21 机考）',          url: 'https://ncre.neea.edu.cn',   recur: '每年3月底、9月中下旬',   conf: true },
   { id: 'midautumn-2026',      title: '中秋假期',                        type: 'notice', date: '2026-09-25', note: '9/25（周五）—9/27（周日）放假，共3天', url: '',                          recur: '农历八月十五',           conf: true },
@@ -35,7 +33,6 @@ window.EVENTS = [
   { id: 'newyear-2027',        title: '元旦假期',                        type: 'notice', date: '2027-01-01', note: '新年假期',                            url: '',                          recur: '每年1月1日',             conf: true },
 
   /* —— 参考推算（年度规律明确，具体日期以当年通知为准） —— */
-  { id: 'cet-2026-06',         title: '大学英语四/六级（上半年）笔试',    type: 'exam',   date: '2026-06-13', note: '上半年笔试；口试 5/23-24',            url: 'https://cet.neea.edu.cn',    recur: '每年6月第2个周六',       conf: false },
   { id: 'kaoyan-2027-pre',     title: '2027 考研预报名',                 type: 'signup', date: '2026-09-24', note: '参考：9月下旬，应届生优先',           url: 'https://yz.chsi.com.cn',     recur: '每年9月下旬',            conf: false },
   { id: 'kaoyan-2027-signup',  title: '2027 考研正式报名',               type: 'signup', date: '2026-10-10', note: '参考：10月上旬—10月底',               url: 'https://yz.chsi.com.cn',     recur: '每年10月',               conf: false },
   { id: 'kaoyan-2027-confirm', title: '2027 考研网上确认',               type: 'signup', date: '2026-11-05', note: '参考：11月上旬',                       url: 'https://yz.chsi.com.cn',     recur: '每年11月上旬',           conf: false },

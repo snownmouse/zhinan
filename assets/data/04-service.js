@@ -10,6 +10,7 @@
       title: '校医院就诊指南',
       summary: '位置、就诊时间、挂号取药全流程、楼层分布、病历本补办。',
       tags: ['重点', '就医'],
+      links: [{ label: '校医院官网（就诊时间 / 电话）', url: 'https://www.scuec.edu.cn/xyy/info/1003/1006.htm' }],
       html: `
 <div class="callout">
   <p>写在开头：<strong>希望各位同学身体健康。</strong>另外提醒一句——<strong>未参加大学生医保的话，医疗费用需要自理。</strong></p>
@@ -154,13 +155,14 @@
       title: '校医院药品清单',
       summary: '校内能拿到的药品范围，拿药前先查一查。',
       tags: ['就医', '工具'],
+      links: [{ label: '校医院官网（就诊时间 / 电话）', url: 'https://www.scuec.edu.cn/xyy/info/1003/1006.htm' }],
       html: `
 <p>校医院能提供的药品范围有限。<strong>医生开的药如果校医院有，请回校医院拿，否则不予报销</strong>——所以看病前先了解清单很有必要。</p>
 
 <h3>清单说明</h3>
 <ul>
-  <li>药品清单会随时间变化，<strong>以校医院最新版本为准</strong>。</li>
-  <li>原手册提供了一份《药品清单》表格文件，可在手册配套资料中获取。</li>
+  <li>药品清单会随时间变化，<strong>以校医院最新版本为准</strong>；具体可报销药品目录请咨询校医院药房。</li>
+  <li>若学校另行发布了《药品清单》表格，可在手册配套资料中查阅，或到校医院药房窗口直接询问。</li>
 </ul>
 
 <div class="callout warn">
@@ -204,6 +206,8 @@
       title: '图书馆使用',
       summary: '借阅权限开通、电子存包柜预约、开放时间、数据库导航。',
       tags: ['学业', '资源'],
+      links: [{ label: '图书馆官网（数据库导航 / 开放时间）', url: 'https://lib.scmu.edu.cn' }],
+      preview: true,
       html: `
 <p>图书馆是本科四年最值得投入时间的地方之一，<strong>先把它用起来</strong>。</p>
 

@@ -18,6 +18,8 @@
         summary: it.summary || '',
         tags: it.tags || [],
         html: it.html || '',
+        links: it.links || [],
+        preview: it.preview || false,
         group: g.group,
         icon: g.icon || '📄',
         desc: g.desc || ''
@@ -281,7 +283,6 @@
               '<a class="cover-btn" href="#/all">浏览全部目录</a>' +
               '<a class="cover-btn ghost" href="#/p/print">先看：打印点在哪</a>' +
             '</div>' +
-            '<div class="cover-reserved">预留位置 · 我到时候留了我再加内容</div>' +
           '</div>' +
           renderCalendar() +
         '</div>' +
@@ -292,7 +293,7 @@
 
       '<div class="section-head"><h2>新生最常问</h2><span>点开直接看</span></div>' +
       '<div class="list-cards">' +
-        quickCard('campus-network', '校园网怎么计费？', '月租 15 元，企业微信缴费') +
+        quickCard('campus-services', '校园网怎么计费？', '月租 15 元，企业微信缴费') +
         quickCard('exam-system', '教务系统能干什么？', '选课 / 成绩 / 评教 / 教室借用') +
         quickCard('zongce', '综测怎么算？', 'A1×10% + A2×70% + A3×20%') +
         quickCard('graduation', '毕业要满足哪些学分？', '课程学分 + 劳动教育 + 双创 + 美育') +
@@ -328,6 +329,23 @@
     el('view').innerHTML = html;
   }
 
+  /* ---------- 官方快链 / 网页预览 ---------- */
+  function renderOfficial(p) {
+    if (!p.links || !p.links.length) return '';
+    var links = p.links.map(function (l) {
+      var url = typeof l === 'string' ? l : l.url;
+      var label = typeof l === 'string' ? l : (l.label || l.url);
+      return '<a class="ob-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(label) + ' ↗</a>';
+    }).join('');
+    var html = '<div class="official-bar"><div class="ob-head">🔗 官方链接</div><div class="ob-links">' + links + '</div></div>';
+    if (p.preview && p.links[0]) {
+      var furl = typeof p.links[0] === 'string' ? p.links[0] : p.links[0].url;
+      html += '<div class="web-preview"><div class="wp-tip">下方为官方网页预览；若浏览器禁止内嵌，请点击上方官方链接直接打开</div>' +
+        '<iframe class="wp-frame" src="' + escapeHtml(furl) + '" referrerpolicy="no-referrer" loading="lazy" title="官方网页预览"></iframe></div>';
+    }
+    return html;
+  }
+
   /* ---------- 内容页 ---------- */
   function renderPage(id) {
     var p = INDEX[id];
@@ -355,6 +373,7 @@
       '<h1 class="page-title">' + escapeHtml(p.title) + '</h1>' +
       (p.summary ? '<p class="page-summary">' + escapeHtml(p.summary) + '</p>' : '') +
       (p.tags.length ? '<div class="page-meta">' + p.tags.map(function (t) { return '<span class="tag">' + escapeHtml(t) + '</span>'; }).join('') + '</div>' : '<div style="height:8px"></div>') +
+      renderOfficial(p) +
       '<article class="content">' + p.html + '</article>' +
       pager;
     window.__compInit && window.__compInit();

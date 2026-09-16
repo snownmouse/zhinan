@@ -57,6 +57,7 @@
       title: '教务系统能干什么',
       summary: '选课、考试、成绩、教材、免修、教室借用、学生评教。',
       tags: ['新生必看', '工具'],
+      links: [{ label: '教务管理系统（需 WebVPN）', url: 'https://ssfw.webvpn.scuec.edu.cn/ssfw/index.do' }],
       html: `
 <p>教务系统是本科四年用得最多的系统，<strong>先把它摸熟，能省掉大量跑腿</strong>。</p>
 <p>入口：<a href="https://ssfw.webvpn.scuec.edu.cn/ssfw/index.do" target="_blank" rel="noopener">中南民族大学教务管理系统</a>（校外访问需先连 WebVPN）。</p>
@@ -159,6 +160,7 @@
       title: '英语 · 数学分级教学',
       summary: '新生分级考试与分级教学安排。',
       tags: ['新生必看', '学业'],
+      links: [{ label: '教务处（分级教学相关通知）', url: 'https://www.scuec.edu.cn/jwc/' }],
       html: `
 <p>学校对英语和数学实行<strong>分级教学</strong>：入学后根据分级考试成绩将学生分入不同层级的班级，教学内容与进度有所区别。</p>
 
@@ -440,6 +442,8 @@
       title: '奖助学金',
       summary: '国家奖助贷、勤工助学、绿色通道与校内奖学金',
       tags: ['资助','学业'],
+      links: [{ label: '学生处 · 学生资助政策', url: 'https://www.scuec.edu.cn/stu/info/1577/8002.htm' }, { label: '资助中心 · 资助资金管理办法', url: 'https://www.scuec.edu.cn/xszz/info/1012/2542.htm' }],
+      preview: true,
       html: `<h3>七位一体资助体系</h3>
 <p>学校建立了「奖、贷、助、勤、减、免、补」七位一体资助体系，确保不让一名学生因家庭经济困难而失学。</p><h3>国家级资助</h3>
 <ul>

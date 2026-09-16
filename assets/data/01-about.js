@@ -10,6 +10,7 @@
       title: '常见违规项预警',
       summary: '哪些行为会影响综测、评优与保研资格。',
       tags: ['重点', '规则'],
+      links: [{ label: '教务处 · 推免相关文件', url: 'https://www.scuec.edu.cn/jwc/info/1003/4114.htm' }],
       html: `
 <p>很多同学到大三才发现，一些「当时觉得没什么」的行为，会在评优、保研、奖学金环节卡住自己。下面这些是<strong>高频踩坑点</strong>。</p>
 
@@ -47,19 +48,39 @@
     {
       id: 'safety',
       title: '平安校园',
-      summary: '校园安全相关内容（持续建设中）。',
-      tags: ['安全'],
+      summary: '消防、紧急求助与校园安全须知。',
+      tags: ['安全', '重点'],
+      links: [{ label: '党委保卫部（保卫处）值班电话', url: 'https://www.scuec.edu.cn/bwc/lxwm.htm' }],
+      preview: true,
       html: `
-<p>本章内容仍在建设中，欢迎参与投稿。</p>
+<p>校园安全无小事。下面几条是<strong>高频安全须知</strong>，建议新生入学第一周就过一遍。</p>
 
-<h3>已知要点</h3>
+<h3>一、消防与用电安全</h3>
 <ul>
-  <li><strong>常违规项预警</strong>：详见「常见违规项预警」。</li>
-  <li><strong>保研文件解读</strong>：详见「推免（保研）全流程」。</li>
+  <li><strong>严禁使用大功率电器</strong>：电炉、电热锅、电热毯、卷发棒等违禁电器一旦查出，按校纪处理，并可能影响综测 / 评优（详见「常见违规项预警」）。</li>
+  <li><strong>人走断电</strong>：离开宿舍拔掉充电器、关闭插排开关，避免线路过载。</li>
+  <li>熟悉所在楼宇的<strong>消防通道与灭火器位置</strong>，不堵塞疏散通道。</li>
 </ul>
 
-<div class="callout">
-  <p>如遇紧急情况，请第一时间联系辅导员、校保卫处或拨打报警电话。<strong>校医院 24 小时急诊电话：15802793857。</strong></p>
+<h3>二、紧急求助</h3>
+<table>
+  <thead><tr><th>情况</th><th>拨打</th></tr></thead>
+  <tbody>
+    <tr><td>校内报警 / 保卫处 24h 值班</td><td><strong>027-67843110</strong>、027-87532535</td></tr>
+    <tr><td>校医院 24h 急诊</td><td>15802793857、027-67846120</td></tr>
+    <tr><td>校外：报警 / 火情 / 交通事故 / 急救</td><td><strong>110 / 119 / 122 / 120</strong></td></tr>
+  </tbody>
+</table>
+
+<h3>三、日常安全提醒</h3>
+<ul>
+  <li><strong>防诈骗是第一课</strong>：陌生来电、刷单返利、冒充客服 / 老师 / 公检法，一律先核实，详见「防诈骗专题」。</li>
+  <li><strong>贵重物品保管</strong>：离开自习室、食堂、操场时随身带走电脑与证件。</li>
+  <li>遇可疑情况或人身安全隐患，第一时间联系<strong>辅导员、校保卫处或报警</strong>。</li>
+</ul>
+
+<div class="callout warn">
+  <p><strong>官方来源：</strong><a href="https://www.scuec.edu.cn/bwc/lxwm.htm" target="_blank" rel="noopener">党委保卫部（保卫处）值班电话</a>。更多安全提示以保卫处与学工部最新通知为准。</p>
 </div>
 `
     },
@@ -102,15 +123,15 @@
 <table>
   <thead><tr><th>学校</th><th>地址</th></tr></thead>
   <tbody>
-    <tr><td>上海交通大学</td><td>SJTU Wiki</td></tr>
-    <tr><td>清华大学</td><td><a href="https://thu.wiki/docs/intro" target="_blank" rel="noopener">thu.wiki</a></td></tr>
+    <tr><td>上海交通大学</td><td><a href="https://sjtudb.net/" target="_blank" rel="noopener">sjtudb.net</a></td></tr>
+    <tr><td>清华大学</td><td>学生 wiki（链接待补充）</td></tr>
     <tr><td>天津大学</td><td><a href="https://wiki.tjubot.cn/" target="_blank" rel="noopener">wiki.tjubot.cn</a></td></tr>
     <tr><td>南京财经大学</td><td><a href="https://nufe.wiki/cn/docs" target="_blank" rel="noopener">nufe.wiki</a></td></tr>
     <tr><td>福州大学</td><td><a href="https://fzuwiki.west2.online/" target="_blank" rel="noopener">fzuwiki.west2.online</a></td></tr>
     <tr><td>西南交通大学</td><td><a href="https://wiki.swjtu.top/" target="_blank" rel="noopener">wiki.swjtu.top</a></td></tr>
     <tr><td>西安邮电大学</td><td><a href="https://wiki.cooo.site/" target="_blank" rel="noopener">wiki.cooo.site</a></td></tr>
     <tr><td>华东理工大学</td><td><a href="https://wiki.ecustvr.top/" target="_blank" rel="noopener">wiki.ecustvr.top</a></td></tr>
-    <tr><td>东北大学</td><td><a href="https://neuwiki.top/" target="_blank" rel="noopener">neuwiki.top</a></td></tr>
+    <tr><td>东北大学</td><td>学生 wiki（链接待补充）</td></tr>
     <tr><td>东北师范大学</td><td><a href="https://innenu.com/" target="_blank" rel="noopener">innenu.com</a></td></tr>
   </tbody>
 </table>
@@ -145,6 +166,70 @@
   </tbody>
 </table><h3>校外求助</h3>
 <p>报警 <strong>110</strong> / 火情 <strong>119</strong> / 交通事故 <strong>122</strong> / 急救 <strong>120</strong></p><p><strong>官方来源：</strong><a href="https://www.scuec.edu.cn/bwc/lxwm.htm">党委保卫部（保卫处）值班电话</a> · <a href="https://www.scuec.edu.cn/xyy/info/1003/1006.htm">校医院官网（就诊时间 / 电话）</a></p>`
+    }
+,
+    {
+      id: 'antiscam',
+      title: '防诈骗专题',
+      summary: '新生最容易踩的诈骗套路与应对。',
+      tags: ['安全', '重点', '新生必看'],
+      links: [{ label: '党委保卫部（保卫处）· 校园安全', url: 'https://www.scuec.edu.cn/bwc/lxwm.htm' }],
+      html: `
+<p>大学生是诈骗高发人群，<strong>开学季尤其密集</strong>。下面这几类套路几乎每年都有人中招。</p>
+
+<h3>最高发套路</h3>
+<table>
+  <thead><tr><th>套路</th><th>话术特征</th><th>应对</th></tr></thead>
+  <tbody>
+    <tr><td>刷单返利</td><td>"兼职刷单，一单返现 XX"</td><td>一切刷单都是诈骗，不点链接、不转账</td></tr>
+    <tr><td>冒充客服</td><td>"快递 / 网贷 / 游戏账号异常，需清空额度"</td><td>挂断后自行到官方 App 核实</td></tr>
+    <tr><td>冒充老师 / 好友</td><td>"我是 X 老师，急用钱 / 交材料费"</td><td>当面或电话核实身份，不私下转账</td></tr>
+    <tr><td>虚假助学金 / 奖学金</td><td>"先交手续费才能发放"</td><td>资助不收任何手续费，以学校通知为准</td></tr>
+    <tr><td>游戏 / 二手交易</td><td>"低价出账号 / 装备，私下交易"</td><td>走官方平台，不脱离平台付款</td></tr>
+  </tbody>
+</table>
+
+<h3>牢记"三不一多"</h3>
+<ul>
+  <li><strong>不轻信</strong>：陌生来电提及"钱 / 账户 / 验证码"先停三秒。</li>
+  <li><strong>不透露</strong>：银行卡号、密码、短信验证码绝不告诉他人。</li>
+  <li><strong>不转账</strong>：未经当面 / 电话核实，绝不转账汇款。</li>
+  <li><strong>多核实</strong>：拿不准就问辅导员、打 96110（反诈专线）或 027-67843110（校保卫处）。</li>
+</ul>
+
+<div class="callout warn">
+  <p>下载<strong>「国家反诈中心」App</strong>并开启来电预警。接到 96110 来电请务必接听——那是反诈中心在提醒你可能正遭遇诈骗。</p>
+</div>
+`
+    }
+,
+    {
+      id: 'mental-health',
+      title: '心理健康与咨询',
+      summary: '心理支持资源与求助渠道。',
+      tags: ['安全', '健康'],
+      html: `
+<p>大学里遇到焦虑、迷茫、人际困扰都很正常。<strong>求助是勇敢，不是软弱。</strong>学校提供了多条心理支持渠道。</p>
+
+<h3>校内资源</h3>
+<ul>
+  <li><strong>心理咨询</strong>：校心理咨询中心提供个体咨询，可通过「双塔心语」公众号或学院辅导员预约。</li>
+  <li><strong>咨询室位置</strong>：校医院四楼设有心理咨询室（详见「校医院就诊指南」楼层分布）。</li>
+  <li><strong>学院辅导员 / 班主任</strong>：日常困扰可先找信任的老师聊一聊。</li>
+</ul>
+
+<h3>什么时候该寻求帮助</h3>
+<ul>
+  <li>持续两周以上的情绪低落、失眠、食欲明显改变；</li>
+  <li>学习、社交明显受影响，自己难以调节；</li>
+  <li>出现伤害自己或他人的念头——<strong>请立即联系辅导员、校医院或拨打 120 / 110</strong>。</li>
+</ul>
+
+<div class="callout info">
+  <p>校外热线：<strong>湖北省心理援助热线 12320-5</strong>、全国希望 24 热线 400-161-9995。紧急情况请直接拨打 120 或 110。</p>
+  <p>详情以学校心理健康教育与咨询中心最新通知为准。</p>
+</div>
+`
     }
 
   ]
