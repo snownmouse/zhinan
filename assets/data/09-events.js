@@ -20,6 +20,12 @@
  *           口试 11/21（四级）· 11/22（六级）；笔试 12/12（上午四级、下午六级）
  *   + 新增：中秋假期 9/25—9/27（国办发明电〔2025〕7号）
  *   - 移除：期末考试、寒假开始、普通话水平测试（各校自定）
+ *
+ * 2026-09-16 整理：
+ *   + 新增：2027 考研后续节点（成绩查询 2月中下旬、国家线 3月中旬、复试/调剂 3月下旬，均为参考推算）
+ *   + 新增：2027 上半年教资（笔试报名 1月中旬、面试 5月，参考推算）
+ *   + 新增：2027 年3月 NCRE（参考推算，每年3月底）
+ *   + 新增：华为ICT大赛 2026-2027 报名截止（实践赛/挑战赛 10/31，已核实官方赛程）
  */
 window.EVENTS = [
   /* —— 官方日期已确认（2026 下半年） —— */
@@ -38,5 +44,26 @@ window.EVENTS = [
   { id: 'kaoyan-2027-confirm', title: '2027 考研网上确认',               type: 'signup', date: '2026-11-05', note: '参考：11月上旬',                       url: 'https://yz.chsi.com.cn',     recur: '每年11月上旬',           conf: false },
   { id: 'ntce-2026-12',        title: '中小学教师资格考试（下半年）面试', type: 'exam',  date: '2026-12-05', note: '参考：12月上旬',                       url: 'https://ntce.neea.edu.cn',   recur: '每年5月、12月各一次',    conf: false },
   { id: 'ntce-2027-03',        title: '中小学教师资格考试（上半年）笔试', type: 'exam',  date: '2027-03-13', note: '参考：3月上旬',                       url: 'https://ntce.neea.edu.cn',   recur: '每年3月、9月各一次',     conf: false },
-  { id: 'cet-2027-06',         title: '大学英语四/六级（上半年）笔试',    type: 'exam',   date: '2027-06-12', note: '参考：6月第2个周六',                  url: 'https://cet.neea.edu.cn',    recur: '每年6月、12月第2个周六', conf: false }
+  { id: 'cet-2027-06',         title: '大学英语四/六级（上半年）笔试',    type: 'exam',   date: '2027-06-12', note: '参考：6月第2个周六',                  url: 'https://cet.neea.edu.cn',    recur: '每年6月、12月第2个周六', conf: false },
+
+  /* —— 2027 学年节点（报名/考试，参考推算为主；华为ICT 为已核实） —— */
+  { id: 'ncre-2027-03',        title: '全国计算机等级考试（NCRE，2027年3月）', type: 'exam', date: '2027-03-27', note: '参考：3月底（第79次）；报名约2026年12月-1月', url: 'https://ncre.neea.edu.cn', recur: '每年3月底、9月中下旬', conf: false },
+  { id: 'kaoyan-2027-score',   title: '2027 考研初试成绩查询',           type: 'notice', date: '2027-02-20', note: '参考：2月中下旬各省陆续开放',         url: 'https://yz.chsi.com.cn',   recur: '每年2月中下旬',           conf: false },
+  { id: 'kaoyan-2027-line',    title: '2027 考研国家线公布',             type: 'notice', date: '2027-03-15', note: '参考：3月中旬；34所自划线更早',       url: 'https://yz.chsi.com.cn',   recur: '每年3月中旬',             conf: false },
+  { id: 'kaoyan-2027-fushi',   title: '2027 考研复试 / 调剂',            type: 'exam',   date: '2027-03-21', note: '参考：3月下旬起；调剂系统3月下旬开',   url: 'https://yz.chsi.com.cn',   recur: '每年3月下旬-4月',         conf: false },
+  { id: 'ntce-2027-03-signup', title: '2027 上半年教资笔试报名',         type: 'signup', date: '2027-01-15', note: '参考：1月中旬；笔试约3月',            url: 'https://ntce.neea.edu.cn', recur: '每年1月报名、3月笔试',     conf: false },
+  { id: 'ntce-2027-05',        title: '2027 上半年教资面试',             type: 'exam',   date: '2027-05-16', note: '参考：5月15-16日',                    url: 'https://ntce.neea.edu.cn', recur: '每年5月面试',               conf: false },
+  { id: 'huawei-ict-2027-signup', title: '华为ICT大赛报名截止（实践赛/挑战赛）', type: 'signup', date: '2026-10-31', note: '实践赛/挑战赛10/31截止；创新赛/编程赛11/30、算子赛10/26、精英赛11/15', url: 'https://e.huawei.com/cn/talent/ict-academy/', recur: '每年8-11月报名', conf: true },
+
+  /* —— 职业证书 / 专业资格考试（参考推算，以当年官方通知为准） —— */
+  { id: 'rk-2027-spring',    title: '计算机软考（上半年）',          type: 'exam',   date: '2027-05-22', note: '高项仅上半年开考；报名约3-4月（分省错峰）', url: 'https://bm.ruankao.org.cn', recur: '每年5月、11月', conf: false },
+  { id: 'rk-2027-autumn',    title: '计算机软考（下半年）',          type: 'exam',   date: '2027-11-05', note: '下半年开考系分/架构/网规等（无高项）',     url: 'https://bm.ruankao.org.cn', recur: '每年5月、11月', conf: false },
+  { id: 'cjkj-2027',         title: '初级会计专业技术资格',         type: 'exam',   date: '2027-05-15', note: '一年仅5月一场；报名约2027年1月',          url: 'https://kzp.mof.gov.cn',   recur: '每年5月',       conf: false },
+  { id: 'neccs-2027',        title: '全国大学生英语竞赛（NECCS）初赛', type: 'exam', date: '2027-04-12', note: '报名约2026-12-2027-03；决赛约5月',        url: 'https://www.saikr.com',    recur: '每年4月（初赛）', conf: false },
+  { id: 'catti-2027-spring', title: '翻译专业资格（CATTI）上半年',  type: 'exam',   date: '2027-06-20', note: '参考：上半年场约6月；下半年约11月',        url: 'http://www.catticenter.com', recur: '每年6月、11月', conf: false },
+  { id: 'psc-2026-12',       title: '普通话水平测试（湖北）',       type: 'exam',   date: '2026-12-10', note: '参考：湖北通常3/6/9/12月多场，以省测试站通知为准', url: '', recur: '每年3/6/9/12月', conf: false },
+
+  /* —— 校方已发布赛事（中南民大创新创业学院 / 教务处通知，已核实） —— */
+  { id: 'mathc-2026-signup', title: '全国大学生数学竞赛（湖北赛区）报名截止', type: 'signup', date: '2026-10-10', note: '系统 9/1 9:00 开放；初赛约11月初', url: 'https://new.saikr.com/vse/cmathc/hb/2026', recur: '每年9-10月报名', conf: true },
+  { id: 'mathc-2026-final',  title: '全国大学生数学竞赛 初赛',       type: 'exam',   date: '2026-11-08', note: '参考：初赛通常11月初；以赛区通知为准',     url: 'https://new.saikr.com/vse/cmathc/hb/2026', recur: '每年11月初', conf: false }
 ];
